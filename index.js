@@ -131,6 +131,27 @@ app.get('/bookFantasy', (req, res) => {
     });
 });
 
+//get all data fiction
+app.get('/bookFiction', (req, res) => {
+  let sql = "SELECT * FROM library.bookFiction;";
+  db.query(sql, (err, result)=> {
+      if (err)
+      {
+        console.log(err,'errs');
+      }
+      if (result.length>0){
+          res.send({
+              message:'all user data',
+              data:result
+          });
+        }
+      
+      else{
+        res.send({ status: true, data: result })
+      }
+    });
+});
+
 //create
 app.post('/library', (req, res) => {
     console.log(req.body,'createdata');
