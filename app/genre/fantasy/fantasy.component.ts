@@ -7,14 +7,14 @@ import { ApiserviceService } from 'src/app/apiservice.service';
   styleUrls: ['./fantasy.component.css']
 })
 export class FantasyComponent {
-  readDataBook2: any[] = [];
+  readDataBook3: any[] = [];
   constructor(private service:ApiserviceService){}
 
   ngOnInit(): void{
 
-    this.service.getAllDataBook2().subscribe((res)=>{
+    this.service.getAllDataBook3().subscribe((res)=>{
       console.log(res,"res==>");
-      this.readDataBook2 = res.data;
+      this.readDataBook3 = res.data;
     });
   }
 }
